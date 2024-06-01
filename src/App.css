@@ -1,42 +1,191 @@
-#root {
-  max-width: 1280px;
+/* Import Satoshi font */
+@import url('https://fonts.googleapis.com/css2?family=Satoshi:wght@300;400;500;700&display=swap');
+
+body {
+  font-family: 'Satoshi', sans-serif;
+  margin: 0;
+  padding: 10px 40px;
+  box-sizing: border-box;
+}
+
+/* Container for the entire portfolio page */
+.container {
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 20px;
+  /* Same padding as the NavBar */
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.11);
+  height: 80px;
+  padding: 0 20px;
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.bold-text {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Main Content */
+.main-content {
+  padding: 40px 0;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+}
+
+/* About Section */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.about h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 800px;
+  font-size: 1em;
+  line-height: 1.6;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Projects Section */
+.projects {
+  padding: 60px 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.projects h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-item {
+  width: calc(33.333% - 40px);
+  margin: 20px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.project-item:hover {
+  transform: scale(1.05);
+}
+
+.project-item h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.project-item p {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* Contact Section */
+.contact {
+  padding: 60px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.contact h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.contact form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.contact button {
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact button:hover {
+  background: #555;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2em;
   }
-  to {
-    transform: rotate(360deg);
+
+  .project-item {
+    width: calc(50% - 40px);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
   }
-}
 
-.card {
-  padding: 2em;
-}
+  .hero h1 {
+    font-size: 1.5em;
+  }
 
-.read-the-docs {
-  color: #888;
+  .project-item {
+    width: calc(100% - 40px);
+  }
 }
