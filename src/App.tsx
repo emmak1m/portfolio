@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import './App.css'
-import NavBar from './components/navbar'
+import React from 'react';
+import './App.css';
+import NavBar from './components/navbar';
+import Portfolio from './Portfolio';
+import SplineViewer from './components/SplineViewer';
+import HeroSection from './components/HeroSection';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <NavBar />
-      <h1>Hello, I'm Emma</h1>
+      <HeroSection />
+      <Portfolio />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

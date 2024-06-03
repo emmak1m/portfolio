@@ -17,6 +17,14 @@ body {
   /* Same padding as the NavBar */
 }
 
+canvas {
+  width: 20%;
+  height: 20px;
+  /* Adjust the height as needed */
+  margin: 20px 0;
+}
+
+
 /* Navbar */
 .navbar {
   width: 100%;

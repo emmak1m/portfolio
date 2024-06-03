@@ -39,11 +39,14 @@ export default function NavBar() {
                 <BoldText>Emma Kim</BoldText>
             </NavLink>
             <LinksContainer>
-                <RightNavLink href="/profile">
-                    My Profile
+                <RightNavLink href="/about">
+                    About
                 </RightNavLink>
-                <RightNavLink href="/searchprofile">
-                    Search Profile
+                <RightNavLink href="https://drive.google.com/file/d/1MhsKDbCbZBVAU8PMWGu5LfC442rgysFb/view">
+                    Resume
+                </RightNavLink>
+                <RightNavLink href="https://www.linkedin.com/in/emmakim2">
+                    LinkedIn
                 </RightNavLink>
             </LinksContainer>
         </NavBarWrapper>
