@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import './App.css';
 
 const PortfolioWrapper = styled.div`
     padding: 60px 0;
-    // width: 100%;  // Ensure the wrapper takes full width
     margin: 40px 90px;
     item-align: center;
 `;
@@ -16,8 +16,9 @@ const ProjectList = styled.div`
 `;
 
 const ProjectItem = styled.div`
-    width: 100%;
+    width: auto;
     display: flex;
+    justify-content: space-between;
     align-items: flex-start;
     margin: 20px 0;
     border-radius: 10px;
@@ -50,25 +51,23 @@ const ProjectImage = styled.img`
 const ProjectContent = styled.div`
     display: flex;
     flex-direction: column;
-    // padding: 20px;
-    // margin-left: 15px;
-    width: calc(100% - 300px); 
-
+    width: calc(100% - 300px);
 `;
 
 const ProjectTitle = styled.h3`
     font-size: 2.7em;
     margin-bottom: 0px;
-
 `;
 
 const ProjectDescription = styled.p`
     font-size: 1em;
     line-height: 1.2;
+    width: 100%;
 `;
 
 const ProjectItemContainer = styled.div`
     display: flex;
+    width: auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -88,43 +87,39 @@ const StyledH2 = styled.h2`
 
 import hadaImage from './assets/hada.jpg';
 import aniforumImage from './assets/aniforum.jpg';
-// import uxjuryImage from '../assets/uxjury.jpg';  
 
 const projects = [
     {
         title: 'Aniforum',
-        description: 'providing a way for anime/manga fans to create communities and connect',
+        description: 'Providing a way for anime/manga fans to create communities and connect.',
         imageUrl: aniforumImage,
+        link: '/aniforum'
     },
-
     {
         title: 'HADA(하다)',
-        description: 'This is a brief description of Project One.',
+        description: 'Creating a new environment for students to learn using space repetition',
         imageUrl: hadaImage,
+        link: '/hada'
     },
-
-    // {
-    //     title: 'UX Jury',
-    //     description: 'This is a brief description of Project Three.',
-    //     imageUrl: uxjuryImage,
-    // },
 ];
 
-const Portfolio = () => {
+const Portfolio: React.FC = () => {
     return (
         <PortfolioWrapper>
             <StyledH2>My Projects</StyledH2>
             <ProjectList>
                 {projects.map((project, index) => (
-                    <ProjectItem key={index}>
-                        <ProjectImage src={project.imageUrl} alt={project.title} />
-                        <ProjectItemContainer>
-                            <ProjectContent>
-                                <ProjectTitle>{project.title}</ProjectTitle>
-                                <ProjectDescription>{project.description}</ProjectDescription>
-                            </ProjectContent>
-                        </ProjectItemContainer>
-                    </ProjectItem>
+                    <Link to={project.link} key={index} style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <ProjectItem>
+                            <ProjectImage src={project.imageUrl} alt={project.title} />
+                            <ProjectItemContainer>
+                                <ProjectContent>
+                                    <ProjectTitle>{project.title}</ProjectTitle>
+                                    <ProjectDescription>{project.description}</ProjectDescription>
+                                </ProjectContent>
+                            </ProjectItemContainer>
+                        </ProjectItem>
+                    </Link>
                 ))}
             </ProjectList>
         </PortfolioWrapper>
