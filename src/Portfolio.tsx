@@ -51,20 +51,20 @@ const ProjectContent = styled.div`
     display: flex;
     flex-direction: column;
     // padding: 20px;
-    margin-left: 20px;
+    // margin-left: 15px;
     width: calc(100% - 300px); 
 
 `;
 
 const ProjectTitle = styled.h3`
     font-size: 2.7em;
-    margin-bottom: 10px;
-    font-family: PP Editorial New, 'Times New Roman', Times, serif;
+    margin-bottom: 0px;
+
 `;
 
 const ProjectDescription = styled.p`
     font-size: 1em;
-    line-height: 1.4;
+    line-height: 1.2;
 `;
 
 const ProjectItemContainer = styled.div`
@@ -72,37 +72,48 @@ const ProjectItemContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 30px;
     width: 100%;
     height: 100%;
+    @media (max-width: 1200px) {
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+`;
+
+const StyledH2 = styled.h2`
+    font-family: PP Editorial New, 'Times New Roman', Times, serif;
 `;
 
 import hadaImage from './assets/hada.jpg';
 import aniforumImage from './assets/aniforum.jpg';
-// import uxjuryImage from '../assets/uxjury.jpg';  // Ensure the path is correct if needed
+// import uxjuryImage from '../assets/uxjury.jpg';  
 
 const projects = [
     {
-        title: 'HADA',
-        description: 'This is a brief description of Project One.',
-        imageUrl: hadaImage, 
-    },
-    {
         title: 'Aniforum',
         description: 'providing a way for anime/manga fans to create communities and connect',
-        imageUrl: aniforumImage, 
+        imageUrl: aniforumImage,
     },
+
+    {
+        title: 'HADA(하다)',
+        description: 'This is a brief description of Project One.',
+        imageUrl: hadaImage,
+    },
+
     // {
     //     title: 'UX Jury',
     //     description: 'This is a brief description of Project Three.',
-    //     imageUrl: uxjuryImage, // Use imported image
+    //     imageUrl: uxjuryImage,
     // },
 ];
 
 const Portfolio = () => {
     return (
         <PortfolioWrapper>
-            <h2>My Projects</h2>
+            <StyledH2>My Projects</StyledH2>
             <ProjectList>
                 {projects.map((project, index) => (
                     <ProjectItem key={index}>
