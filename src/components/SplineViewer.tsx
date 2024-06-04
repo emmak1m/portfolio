@@ -12,12 +12,17 @@ const SplineViewer: React.FC = () => {
     }, []);
 
     return (
-        <canvas
-            ref={canvasRef}
-            width="10%"
-            height="30px"  // Use height attribute to explicitly set the canvas height
-            style={{ width: '10%', height: '30px', margin: '20px 0' }} // Ensure the inline styles are also applied
-        />
+        <div style={{ flex: 2, padding: '20px', position: 'relative', margin: '0 100px' }}>
+            <canvas
+                ref={canvasRef}
+                style={{
+                    position: 'relative',
+                    alignContent: 'left',
+                    width: '100%',
+                    height: '100%',
+                }}
+            />
+        </div>
     );
 };
 
