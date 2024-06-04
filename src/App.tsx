@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import NavBar from './components/navbar';
 import Portfolio from './Portfolio';
-import SplineViewer from './components/SplineViewer';
+// import SplineViewer from './components/SplineViewer';
 import HeroSection from './components/HeroSection';
 import styled from 'styled-components';
 

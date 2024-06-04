@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import './App.css';  // Ensure that the correct path to App.css is used
+import './App.css';
 
 const PortfolioWrapper = styled.div`
     padding: 60px 0;
@@ -29,30 +29,52 @@ const ProjectItem = styled.div`
     &:hover {
         transform: scale(1.025);
     }
+    @media (max-width: 1200px) {
+        flex-direction: column;
+        margin-left: 0;
+        width: 100%;
+    }
 `;
 
 const ProjectImage = styled.img`
-    width: 500px;  // Set a fixed width to make the image square
-    height: 400px;  // Set a fixed height to match the width
+    width: 600px;
+    height: 400px;
     object-fit: cover;
+
+    @media (max-width: 1200px) {
+        width: 100%;
+        height: auto;
+    }
 `;
 
 const ProjectContent = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    // padding: 20px;
     margin-left: 20px;
-    width: calc(100% - 300px);  // Calculate the remaining width after the image
+    width: calc(100% - 300px); 
+
 `;
 
 const ProjectTitle = styled.h3`
-    font-size: 1.5em;
+    font-size: 2.7em;
     margin-bottom: 10px;
+    font-family: PP Editorial New, 'Times New Roman', Times, serif;
 `;
 
 const ProjectDescription = styled.p`
     font-size: 1em;
     line-height: 1.4;
+`;
+
+const ProjectItemContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    height: 100%;
 `;
 
 import hadaImage from './assets/hada.jpg';
@@ -63,12 +85,12 @@ const projects = [
     {
         title: 'HADA',
         description: 'This is a brief description of Project One.',
-        imageUrl: hadaImage, // Use imported image
+        imageUrl: hadaImage, 
     },
     {
         title: 'Aniforum',
-        description: 'This is a brief description of Project Two.',
-        imageUrl: aniforumImage, // Use imported image
+        description: 'providing a way for anime/manga fans to create communities and connect',
+        imageUrl: aniforumImage, 
     },
     // {
     //     title: 'UX Jury',
@@ -85,10 +107,12 @@ const Portfolio = () => {
                 {projects.map((project, index) => (
                     <ProjectItem key={index}>
                         <ProjectImage src={project.imageUrl} alt={project.title} />
-                        <ProjectContent>
-                            <ProjectTitle>{project.title}</ProjectTitle>
-                            <ProjectDescription>{project.description}</ProjectDescription>
-                        </ProjectContent>
+                        <ProjectItemContainer>
+                            <ProjectContent>
+                                <ProjectTitle>{project.title}</ProjectTitle>
+                                <ProjectDescription>{project.description}</ProjectDescription>
+                            </ProjectContent>
+                        </ProjectItemContainer>
                     </ProjectItem>
                 ))}
             </ProjectList>

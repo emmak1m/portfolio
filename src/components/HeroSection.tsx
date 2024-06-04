@@ -28,7 +28,7 @@ const Verticaldiv = styled.div`
 
 const Header = styled.h1`
     font-size: 2.2em;
-    margin-bottom: 10px; /* Reduced spacing */
+    margin-bottom: 5px; 
     font-family: PP Editorial New, 'Times New Roman', Times, serif;
     font-weight: semibold;
 `;

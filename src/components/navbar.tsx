@@ -9,11 +9,11 @@ const NavBarWrapper = styled.div`
     font-family: 'Satoshi', sans-serif;
     background: rgba(255, 255, 255, 0.11);
     height: 70px;
-    box-sizing: border-box; /* Include padding in the width */
-    // padding: 0 20px; /* Add padding to the navbar */
+    box-sizing: border-box;
+    // padding: 0 20px;
     ${({ menuOpen }) => menuOpen && `
-        padding-left: 120px; /* Adjust left padding when menu is open */
-        padding-right: 120px; /* Adjust right padding when menu is open */
+        padding-left: 120px; 
+        padding-right: 120px; 
     `}
 `;
 
