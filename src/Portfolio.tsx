@@ -2,11 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import './App.css';
+import ProjectCard from './components/ProjectCard';
 
 const PortfolioWrapper = styled.div`
     padding: 60px 0;
     margin: 40px 90px;
     item-align: center;
+    
 `;
 
 const ProjectList = styled.div`
@@ -16,9 +18,10 @@ const ProjectList = styled.div`
 `;
 
 const ProjectItem = styled.div`
-    width: auto;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    // justify-content: space-between;
     align-items: flex-start;
     margin: 20px 0;
     border-radius: 10px;
@@ -41,6 +44,7 @@ const ProjectImage = styled.img`
     width: 600px;
     height: 400px;
     object-fit: cover;
+    overflow: hidden;
 
     @media (max-width: 1200px) {
         width: 100%;
@@ -62,7 +66,7 @@ const ProjectTitle = styled.h3`
 const ProjectDescription = styled.p`
     font-size: 1em;
     line-height: 1.2;
-    width: 100%;
+    width: 480px;
 `;
 
 const ProjectItemContainer = styled.div`
@@ -81,6 +85,10 @@ const ProjectItemContainer = styled.div`
     }
 `;
 
+const Spacer = styled.div`
+    height: 120px;
+`;
+
 const StyledH2 = styled.h2`
     font-family: PP Editorial New, 'Times New Roman', Times, serif;
 `;
@@ -90,16 +98,16 @@ import aniforumImage from './assets/aniforum.jpg';
 
 const projects = [
     {
-        title: 'Aniforum',
-        description: 'Providing a way for anime/manga fans to create communities and connect.',
-        imageUrl: aniforumImage,
-        link: '/aniforum'
-    },
-    {
         title: 'HADA(하다)',
         description: 'Creating a new environment for students to learn using space repetition',
         imageUrl: hadaImage,
         link: '/hada'
+    },
+    {
+        title: 'Aniforum',
+        description: 'Providing a way for anime/manga fans to create communities and connect.',
+        imageUrl: aniforumImage,
+        link: '/aniforum'
     },
 ];
 
@@ -122,6 +130,8 @@ const Portfolio: React.FC = () => {
                     </Link>
                 ))}
             </ProjectList>
+            <Spacer />
+            {/* <ProjectCard /> */}
         </PortfolioWrapper>
     );
 };

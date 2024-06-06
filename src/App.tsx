@@ -23,9 +23,7 @@ const App: React.FC = () => {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/aniforum" element={<Aniforum />} />
         <Route path="/hada" element={<Hada />} />
-        {/* Add other routes here */}
       </Routes>
-      {/* <Portfolio /> */}
     </Router>
   );
 }

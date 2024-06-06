@@ -1,0 +1,69 @@
+/* Aniforum Card and Hada Card Styles */
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    cursor: pointer;
+    will-change: transform, opacity;
+    overflow: hidden;
+    perspective: 1000px;
+    /* Add perspective for 3D effect */
+}
+
+.aniforumfront,
+.aniforumback,
+.hadafront,
+.hadaback {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    /* Hide the backface */
+    transition: transform 0.6s;
+    /* Smooth transition */
+}
+
+.aniforumcontainer,
+.hadacontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+}
+
+.aniforumcontainer:hover .aniforumfront,
+.hadacontainer:hover .hadafront {
+    transform: rotateY(180deg);
+}
+
+.aniforumcontainer:hover .aniforumback,
+.hadacontainer:hover .hadaback {
+    transform: rotateY(0deg);
+}
+
+.aniforumfront {
+    transform: rotateY(0deg);
+    background-image: url(../assets/aniforum.jpg)
+}
+
+.aniforumback {
+    transform: rotateY(-180deg);
+    background-image: url(../assets/aniforum.jpg);
+}
+
+.hadafront {
+    transform: rotateY(0deg);
+    background-image: url(../assets/hada.jpg)
+}
+
+.hadaback {
+    transform: rotateY(-180deg);
+    background-image: url(../assets/hada.jpg);
+}
