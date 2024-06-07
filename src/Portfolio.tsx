@@ -98,6 +98,12 @@ import aniforumImage from './assets/aniforum.jpg';
 
 const projects = [
     {
+        title: 'UXJury',
+        description: 'A platform to connect the designers to the ones who the designs are made for.',
+        imageUrl: aniforumImage,
+        link: '/aniforum'
+    },
+    {
         title: 'HADA(하다)',
         description: 'Creating a new environment for students to learn using space repetition',
         imageUrl: hadaImage,
